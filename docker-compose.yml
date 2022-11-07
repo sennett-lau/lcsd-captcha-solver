@@ -1,0 +1,27 @@
+version: "3"
+services:
+  tf-aocr-lcsd-4:
+    image: tf-aocr:v1
+    volumes:
+      - "./lcsd-captcha-solver/models/lcsd-captcha-4:/models/lcsd-captcha-4"
+    networks:
+      - lcsd-booking
+    ports:
+      - "9000:8501"
+    restart: always
+    environment:
+      MODEL_NAME: lcsd-captcha-4
+  tf-aocr-lcsd-5:
+    image: tf-aocr:v1
+    volumes:
+      - "./lcsd-captcha-solver/models/lcsd-captcha-5:/models/lcsd-captcha-5"
+    networks:
+      - lcsd-booking
+    ports:
+      - "9001:8501"
+    restart: always
+    environment:
+      MODEL_NAME: lcsd-captcha-5
+
+networks:
+  lcsd-booking:
