@@ -1,0 +1,1 @@
+# LCSD Captcha Solver
